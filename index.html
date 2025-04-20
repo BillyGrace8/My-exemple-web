@@ -9,17 +9,89 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
-      text-align: left;
-     } 
+      margin: 0;
+      padding: 0;
+    }
+
     h1 {
       color: #333;
-     }
+      margin: 20px;
+    }
+
+    /* Barra superior */
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: #333;
+      padding: 10px 20px;
+    }
+
+    .menu-icon {
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Menú desplegable */
+    .menu {
+      display: none;
+      flex-direction: column;
+      background-color: #444;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    .menu a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <h1>BillyGrace Web!</h1>
+
+  <!-- Barra amb menú -->
+  <div class="navbar">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  </div>
+
+  <!-- Menú desplegable -->
+  <div class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="fitxers.html">Fitxers</a>
+  </div>
+
+  <!-- Contingut principal -->
+  <h1 id="home">BillyGrace Web!</h1>
   <h2>This seems to work!</h2>
   <p><u>Only trying to do a wesite</u></p>
-  <p><a href="html_tutorial.pdf" target="_blank">Tutorial_HTML</a></p>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+
+    // Opcional: tancar el menú si es fa clic fora
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById("menu");
+      const icon = document.querySelector(".menu-icon");
+      if (!menu.contains(event.target) && !icon.contains(event.target)) {
+        menu.style.display = "none";
+      }
+    });
+  </script>
+
 </body>
 </html>
