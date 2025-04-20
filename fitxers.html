@@ -9,10 +9,41 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
-      padding: 20px;
+      margin: 0;
+      padding: 0;
     }
 
-    h1 {
+    /* Barra superior */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 10px 20px;
+    }
+
+    .navbar h1 {
+      color: white;
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .back-icon {
+      font-size: 28px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .back-icon:hover {
+      opacity: 0.7;
+    }
+
+    /* Llista de fitxers */
+    .content {
+      padding:0;
+    }
+
+    h2 {
       color: #333;
     }
 
@@ -33,25 +64,26 @@
     a:hover {
       text-decoration: underline;
     }
-
-    .back {
-      margin-top: 20px;
-      display: inline-block;
-      color: #444;
-    }
   </style>
 </head>
 <body>
 
-  <h1>Fitxers disponibles</h1>
+  <!-- Barra superior -->
+  <div class="navbar">
+    <h1>Fitxers disponibles</h1>
+    <a href="index.html" class="back-icon">🔙</a>
+  </div>
 
-  <ul>
-    <li><a href="html_tutorial.pdf" target="_blank">📄 Tutorial HTML</a></li>
-  </ul>
-
-  <a href="index.html" class="back">🔙 Tornar a la pàgina principal</a>
+  <!-- Contingut -->
+  <div class="content">
+    <ul>
+      <li><a href="html_tutorial.pdf" target="_blank">📄 Tutorial HTML</a></li>
+    </ul>
+  </div>
 
 </body>
 </html>
+
+
 
 
