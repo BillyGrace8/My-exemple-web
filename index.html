@@ -13,25 +13,21 @@
       padding: 0;
     }
 
-    h1 {
-      color: #333;
-      margin: 20px;
-    }
-
     /* Barra superior */
     .navbar {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between; /* títol a l'esquerra, menú a la dreta */
       align-items: center;
       background-color: #333;
       padding: 10px 20px;
     }
-    
+
     .navbar h1 {
-      color:white
+      color: white;
       margin: 0;
       font-size: 20px;
     }
+
     .menu-icon {
       font-size: 28px;
       color: white;
@@ -61,6 +57,12 @@
     .menu a:hover {
       text-decoration: underline;
     }
+
+    /* Contingut */
+    .content {
+      padding: 0px;
+    }
+
   </style>
 </head>
 <body>
@@ -77,10 +79,11 @@
   </div>
 
   <!-- Contingut principal -->
-  <h1>BillyGrace Web!</h1>
-  <h2>This seems to work!</h2>
-  <p><u>Only trying to do a wesite</u></p>
-
+  <div class="content">
+    <h1>BillyGrace Web!</h1>
+    <h2>This seems to work!</h2>
+    <p><u>Only trying to do a wesite</u></p>
+  </div>
 
   <script>
     function toggleMenu() {
@@ -88,7 +91,7 @@
       menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
     }
 
-    // Opcional: tancar el menú si es fa clic fora
+    // Tancar el menú si es fa clic fora
     document.addEventListener('click', function(event) {
       const menu = document.getElementById("menu");
       const icon = document.querySelector(".menu-icon");
